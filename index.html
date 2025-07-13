@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Streaming ওয়েবসাইট</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/photos/file_17.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 { margin-bottom: 20px; font-size: 2rem; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 8px; }
+    .section {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    video, audio, img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .controls {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .controls button,
+    .controls input[type="range"] {
+      cursor: pointer;
+    }
+    .controls button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #e67e22;
+      color: #fff;
+      transition: background .2s;
+    }
+    .controls button:hover { background: #d35400; }
+    .controls input[type="range"] {
+      flex: 1;
+      margin: 0 10px;
+    }
+    .playlist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    .playlist button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      background: #34495e;
+      color: #fff;
+      transition: background .2s;
+    }
+    .playlist button:hover { background: #2c3e50; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <h1>🎥🎧🖼️ Media Streaming ওয়েবসাইট</h1>  <!-- Video Section -->  <div class="section">
+    <h2>🎬 ভিডিও প্লেয়ার</h2>
+    <video id="videoPlayer" controls>
+      <source id="videoSource" src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/videos/file_7.mp4" type="video/mp4">
+      আপনার ব্রাউজার ভিডিও প্লে সমর্থন করে না।
+    </video>
+    <div class="controls">
+      <button id="playPause">Play ▶️</button>
+      <input type="range" id="seekBar" value="0" min="0">
+      <button id="muteUnmute">Mute 🔊</button>
+    </div>
+    <div class="playlist">
+      <button data-src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/videos/file_7.mp4">Video 7</button>
+      <button data-src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/videos/file_8.mp4">Video 8</button>
+      <button data-src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/videos/file_9.mp4">Video 9</button>
+      <button data-src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/videos/file_10.mp4">Video 10</button>
+      <button data-src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/videos/file_11.mp4">Video 11</button>
+    </div>
+  </div>  <!-- Audio Section -->  <div class="section">
+    <h2>🎧 অডিও প্লেয়ার</h2>
+    <audio controls>
+      <source src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/music/file_12.m4a" type="audio/mp4">
+      আপনার ব্রাউজার অডিও প্লে করতে পারে না।
+    </audio>
+  </div>  <!-- Image Gallery Section -->  <div class="section">
+    <h2>🖼️ ফটো গ্যালারি</h2>
+    <div class="gallery">
+      <img src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/photos/file_17.jpg" alt="Image 17">
+      <img src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/photos/file_16.jpg" alt="Image 16">
+      <img src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/photos/file_15.jpg" alt="Image 15">
+      <img src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/photos/file_14.jpg" alt="Image 14">
+      <img src="https://api.telegram.org/file/bot7893013232:AAGezudHgCxtjCP9UcHIi5N3KTpHPbrnTig/photos/file_13.jpg" alt="Image 13">
+    </div>
+  </div>  <script>
+    const video = document.getElementById('videoPlayer');
+    const source = document.getElementById('videoSource');
+    const playPauseBtn = document.getElementById('playPause');
+    const muteUnmuteBtn = document.getElementById('muteUnmute');
+    const seekBar = document.getElementById('seekBar');
+    const playlist = document.querySelector('.playlist');
+
+    playPauseBtn.addEventListener('click', () => {
+      if (video.paused) { video.play(); playPauseBtn.textContent = 'Pause ⏸️'; }
+      else { video.pause(); playPauseBtn.textContent = 'Play ▶️'; }
+    });
+
+    muteUnmuteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteUnmuteBtn.textContent = video.muted ? 'Unmute 🔈' : 'Mute 🔊';
+    });
+
+    video.addEventListener('timeupdate', () => {
+      seekBar.value = (video.currentTime / video.duration) * 100 || 0;
+    });
+
+    seekBar.addEventListener('input', () => {
+      video.currentTime = (seekBar.value / 100) * video.duration;
+    });
+
+    playlist.addEventListener('click', e => {
+      if (e.target.tagName === 'BUTTON') {
+        source.src = e.target.dataset.src;
+        video.load(); video.play();
+        playPauseBtn.textContent = 'Pause ⏸️';
+      }
+    });
+  </script></body>
+</html>
